@@ -1,0 +1,38 @@
+@import 'styles/vars';
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 2px;
+  color: var(--color-white);
+  font-size: 16px;
+  @include Animation(color, background-color);
+
+  @media screen and (min-width: 1280px) {
+    font-size: 18px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-gray);
+    color: var(--color-black);
+  }
+}
+
+.tooltip {
+  margin-top: 10px;
+  padding: 2px;
+  font-size: 90%;
+  width: min-content;
+  background-color: transparent;
+  color: var(--color-gray);
+}

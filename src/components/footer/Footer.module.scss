@@ -1,0 +1,81 @@
+@import 'styles/vars';
+
+.footer {
+  padding: 20px 0 16px;
+  color: var(--color-white);
+  background: linear-gradient(var(--color-gray), var(--color-black));
+  box-shadow: 0 -5px 100px -5px var(--color-gray);
+}
+
+.footerContainer {
+  margin: 0 auto;
+  text-align: center;
+
+  font-size: 0.8rem;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 1.1rem;
+  }
+}
+
+.footerContainer > div:not(:first-child) {
+  margin-top: 8px;
+  padding: 4px;
+  border-radius: 4px;
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 14px;
+  }
+}
+
+.disclaimer {
+  font-size: 14px;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 16px;
+    line-height: 1.3em;
+  }
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.link {
+  display: block;
+  color: var(--color-white);
+  background-color: transparent;
+  border-bottom: 2px double var(--color-accent-variant);
+  cursor: pointer;
+  text-transform: uppercase;
+  @include Animation(color);
+
+  &:hover,
+  &:focus {
+    color: var(--color-gray);
+    border-bottom: 2px double var(--color-gray);
+  }
+}
+
+.bottom {
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    column-gap: 48px;
+  }
+}
+
+.copyright {
+  position: relative;
+  font-size: 0.8rem;
+
+  @media screen and (max-width: 1279px) {
+    margin-top: 16px;
+    font-size: 0.7rem;
+  }
+}

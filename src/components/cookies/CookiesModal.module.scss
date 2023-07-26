@@ -1,0 +1,62 @@
+@import 'styles/vars';
+
+.cookieBar {
+  z-index: 1;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  text-align: center;
+  background: var(--color-white);
+  transform: translateX(-50%);
+
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2.5rem;
+    padding: 16px;
+  }
+}
+
+.content {
+  @media screen and (max-width: 1279px) {
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.text {
+  color: var(--color-black);
+  font-size: 1.1rem;
+
+  @media screen and (max-width: 1279px) {
+    margin-bottom: 4px;
+    font-size: 1rem;
+  }
+}
+
+.link {
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+
+  @include Animation(color);
+
+  &:hover,
+  &:focus {
+    color: var(--color-primary);
+  }
+}

@@ -1,0 +1,28 @@
+@import 'styles/vars';
+
+.closeBtn {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 1px;
+  right: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  & svg {
+    stroke: var(--color-secondary);
+  }
+
+  &:focus,
+  &:hover {
+    svg {
+      stroke: var(--color-accent-variant);
+    }
+  }
+}
+
+.closeBtn svg {
+  @include Animation(stroke);
+}

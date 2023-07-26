@@ -1,0 +1,97 @@
+@import 'styles/vars';
+
+.backDrop {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85vw;
+  max-width: 600px;
+  height: auto;
+  transform: translate(-50%, -50%);
+
+  color: var(--color-white);
+  background: linear-gradient(45deg, var(--color-black), var(--color-gray));
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  @media screen and (min-width: 1280px) {
+    width: 50vw;
+    max-height: 90vh;
+  }
+}
+
+.ageModal {
+  composes: modal;
+
+  max-width: 600px;
+  text-align: center;
+}
+
+.formModal {
+  composes: modal;
+
+  padding: 24px 16px;
+  box-shadow: 0 0 0 13px var(--color-light);
+
+  @media screen and (min-width: 1280px) {
+    width: 480px;
+    padding: 24px;
+  }
+}
+
+.gameModal {
+  composes: modal;
+
+  width: 90vw;
+  max-width: 90vw;
+  height: 90vh;
+  padding: 0;
+
+  background: black;
+}
+
+.textModal {
+  min-height: 300px;
+  padding: 36px 16px 24px;
+  background: var(--color-white);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  &:before,
+  &:after {
+    content: '';
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:before {
+    background: #fafafa;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+  }
+
+  &:after {
+    background: #f6f6f6;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 40px 24px 32px;
+  }
+}

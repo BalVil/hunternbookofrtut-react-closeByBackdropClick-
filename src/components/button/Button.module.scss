@@ -1,0 +1,103 @@
+@import 'styles/vars';
+
+.button {
+  min-width: 90px;
+  display: inline-block;
+  align-self: center;
+  padding: 0.75rem;
+  background-color: var(--color-white);
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  color: var(--color-black);
+  font-size: 1.4rem;
+  line-height: 0.8em;
+  user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  @include Animation(box-shadow, transform);
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  }
+
+  &:focus {
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+  }
+
+  &:active {
+    transform: translate3d(0, 2px, 0);
+  }
+}
+
+.btnHero {
+  composes: button;
+  font-size: 2.2rem;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 3.4rem;
+  }
+}
+
+.btnContact {
+  composes: button;
+  width: 40%;
+  padding: 0.54em 1.9em;
+  font-size: 1.4rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.disabledBtn {
+  composes: button;
+
+  color: #959da5;
+  cursor: default;
+
+  &:hover,
+  &:focus {
+    box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  }
+
+  &:active {
+    transform: none;
+  }
+}
+
+.btnYes {
+  composes: button;
+  background-color: var(--color-accent);
+  @include Animation(background-color);
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-accent-variant);
+  }
+}
+
+.btnNo {
+  composes: button;
+  background-color: var(--color-gray);
+  color: var(--color-black);
+  @include Animation(color);
+
+  &:hover,
+  &:focus {
+    box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  }
+
+  &:active {
+    transform: none;
+  }
+}

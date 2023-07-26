@@ -1,0 +1,131 @@
+@import 'styles/vars';
+
+.featured {
+  margin-top: 12px;
+  text-align: center;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.label {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.4rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid transparent;
+  text-align: center;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.5;
+
+  @include Animation(border);
+
+  &::placeholder {
+    // color: var(--color-primary);
+  }
+
+  &:focus,
+  &:hover {
+    border: 1px solid var(--color-gray);
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 1.4rem;
+  }
+}
+
+.checkboxLabel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  color: var(--color-primary);
+  font-weight: 300;
+  line-height: 1.3em;
+  text-align: justify;
+
+  @media screen and (min-width: 1280px) {
+    width: 100%;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+}
+
+.checkboxInput {
+  width: 1.15em;
+  height: 1em;
+  display: grid;
+  margin-right: 12px;
+  place-content: center;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  background-color: var(--color-white);
+
+  /* Remove most all native input styles */
+  appearance: none;
+  font: inherit;
+  color: currentColor;
+
+  @include Animation(background-color);
+
+  &::before {
+    content: '';
+    width: 0.75em;
+    height: 0.75em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:focus {
+    outline: max(1px, 0.1em) solid currentColor;
+    outline-offset: max(1px, 0.1em);
+  }
+}
+
+.link {
+  background-color: transparent;
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--color-gray);
+  cursor: pointer;
+
+  @include Animation(color);
+
+  &:hover,
+  &:focus {
+    color: inherit;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 1.1rem;
+  }
+}
+
+.errorMsg {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  margin: auto;
+  font-size: 11px;
+  color: #dd1d1d;
+}

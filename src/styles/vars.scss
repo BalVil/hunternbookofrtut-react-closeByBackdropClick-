@@ -1,0 +1,20 @@
+:root {
+  --color-white: #fff;
+
+  --color-black: #1c1f1f;
+  --color-gray: #95b0b4;
+
+  --color-primary: #35a5b3;
+  --color-secondary: #324b4f;
+
+  --color-accent: #9d8fc6;
+  --color-accent-variant: #695d90;
+
+  --toastify-color-gray: var(--color-secondary);
+  --toastify-text-color-gray: var(--color-white);
+}
+
+// Transition with default value
+@mixin Animation($properties...) {
+  transition: 250ms ease-in-out;
+}
